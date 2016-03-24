@@ -1,0 +1,7 @@
+{
+  "add_point_for_login": 1,
+  "add_point_for_transact_cre":20,
+  "add_point_for_transact_cal":-20,
+  "add_point_for_transact_ok":1,
+  "add_point_for_transact_check":50
+}

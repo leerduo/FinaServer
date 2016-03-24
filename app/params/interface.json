@@ -1,0 +1,45 @@
+{
+  "host":"127.0.0.1",
+
+  "index":"/",
+  "good":"/goods",
+  "getGoods": "/get/:page",
+  "getGoodsByKey": "/category/:key/:page",
+  "getGoodsByType":"/type/:type/:page",
+  "getGoodDetail":"/det/:token/:id",
+
+  "transact":"/transact",
+   "creTransact":"/cre/:token",
+   "yetTransact":"/pay/yet/:token/:page",
+   "calTransact":"/pay/yet/:token/:id",
+   "payTransact":"/pay/to_pay/:token/:id",
+   "getTransact":"/get/:token/:page",
+   "senTransact":"/sen/:token/:id",
+   "gotTransact":"/got/:token/:page",
+
+
+  "user":"/user",
+  "getUser":"/get/:token",
+  "registerUser":"/register",
+  "signOutUser":"/logout/:token",
+  "signInUser":"/login/",
+  "forget":"/forget",
+  "checkPoint":"/check/:token",
+
+  "address":"/address",
+  "getAddress":"/get/:token/:page",
+  "addAddress":"/add/:token",
+  "delAddress":"/del/:token/:id",
+  "upAddress":"/up/:token/:id",
+
+  "shop":"/shop",
+  "getShop":"/all/:token/:page",
+  "addShop":"/add/:token",
+  "upShop":"/up/:token/:id/:count",
+  "delShop":"/del/:token/:id",
+
+  "point":"/point",
+  "addPoint":"/add/:token/:point",
+  "delPoint":"/del/:token/:id",
+  "getSumPoint":"/sum/:token"
+}
