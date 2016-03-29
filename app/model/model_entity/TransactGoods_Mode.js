@@ -5,7 +5,7 @@ var mongoose = require('mongoose');
 
 var TransactGoodsSchema = mongoose.Schema({
     good: {type: mongoose.Schema.Types.ObjectId, ref: "GoodModel"},
-    seller: {type: mongoose.Schema.Types.ObjectId, ref: "UserModel"},
+    seller: {type: mongoose.Schema.Types.ObjectId, ref: "GoodModel"},
     buyer: {type: mongoose.Schema.Types.ObjectId, ref: "UserModel"},
     address: {type: mongoose.Schema.Types.ObjectId, ref: "UserAddressModel"},
     count: Number,

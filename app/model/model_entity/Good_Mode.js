@@ -4,6 +4,7 @@
 var mongoose = require('mongoose');
 
 var GoodSchema = mongoose.Schema({
+    seller: {type: mongoose.Schema.Types.ObjectId, ref: "UserModel"},
     name: String,
     description:String,
     price:Number,
