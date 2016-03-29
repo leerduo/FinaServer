@@ -1,11 +1,11 @@
-.idea
+.idea/*
 
-app_test
+app_test/*
 
 LICENSE
 
 web storm linces
 
-node_modules
+node_modules/*
 
-public
+public/*

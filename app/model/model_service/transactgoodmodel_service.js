@@ -37,7 +37,7 @@ exports.creTransactGood = function (req, res) {
     var user_token = req.params.token;
     var data = req.body;
     global.cach_server.get(user_token, function (err, result) {
-        if (err) {
+        if (err||result == null) {
             msg_unit.failMessage(res, "请先登录");
         }
         var transact = new TransactGood(data);
@@ -63,7 +63,7 @@ exports.yetTransactGood = function (req, res) {
     var user_token = req.params.token;
     var page = req.params.page;
     global.cach_server.get(user_token, function (err, result) {
-        if (err) {
+        if (err||result == null) {
             msg_unit.failMessage(res, "请先登录");
         }
 
@@ -93,7 +93,7 @@ exports.calTransactGood = function (req, res) {
     var user_token = req.params.token;
     var id = req.params.id;
     global.cach_server.get(user_token, function (err, result) {
-        if (err) {
+        if (err||result == null) {
             msg_unit.failMessage(res, "请先登录");
         }
         TransactGood.remove({_id:id})
@@ -119,7 +119,7 @@ exports.payTransactGood = function (req, res) {
     var user_token = req.params.token;
     var id = req.params.id;
     global.cach_server.get(user_token, function (err, result) {
-        if (err) {
+        if (err||result == null) {
             msg_unit.failMessage(res, "请先登录");
         }
 
@@ -160,7 +160,7 @@ exports.getTransactGood = function (req, res) {
 exports.senTransactGood = function (req, res) {
     var user_token = req.params.token;
     global.cach_server.get(user_token, function (err, result) {
-        if (err) {
+        if (err||result == null) {
             msg_unit.failMessage(res, "请先登录");
         }
 
@@ -192,7 +192,7 @@ exports.senTransactGood = function (req, res) {
 exports.gotTransactGood = function (req, res) {
     var user_token = req.params.token;
     global.cach_server.get(user_token, function (err, result) {
-        if (err) {
+        if (err||result == null) {
             msg_unit.failMessage(res, "请先登录");
         }
 

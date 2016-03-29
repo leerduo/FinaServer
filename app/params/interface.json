@@ -25,6 +25,7 @@
   "signInUser":"/login/",
   "forget":"/forget",
   "checkPoint":"/check/:token",
+  "addRelPoint":"/relmoney/:money/:token",
 
   "address":"/address",
   "getAddress":"/get/:token/:page",

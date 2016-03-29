@@ -9,7 +9,13 @@ var getAll = function getAllGood(page, res) {
         if (err)
             msg_unit.failMessage(res, err);
         else
+        {
+            res.append(
+                "Cache-Control","max-age=600"
+            );
             msg_unit.successMessage(res, result);
+        }
+
     });
 }
 

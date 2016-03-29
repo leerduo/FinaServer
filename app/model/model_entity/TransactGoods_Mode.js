@@ -16,7 +16,7 @@ var TransactGoodsSchema = mongoose.Schema({
     is_pay: {type: Boolean, default: false}, //用于在支付界面的回调操作
     is_received: {type: Boolean, default: false},
     is_send: {type: Boolean, default: false},
-    integral: {type: Number, default: 10, index: true},//积分
+    integral: {type: mongoose.Schema.Types.ObjectId, ref:"PointCardModel"},//积分
     create_date: {type: Date, default: Date.now},
     update_date: {type: Date, default: Date.now}
 })

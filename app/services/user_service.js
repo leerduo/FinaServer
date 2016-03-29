@@ -38,3 +38,29 @@ exports.CheckUser = function OpPoint(req,res){
         }
     })
 }
+
+/***
+ * 签到
+ * @param req
+ * @param res
+ * @constructor
+ */
+exports.addRelPoint = function OpPoint(req,res){
+    if(req.params.money>point_config.add_rel_point_by_money)
+    {
+        UserService.OpInteger(req.params.token,1,req.params.money,"充值",null,function(err,result)
+        {
+            if(err){
+                msg_unit.failMessage(res,"积分操作失败");
+            }else
+            {
+                console.log(result);
+                msg_unit.successMessage(res,"successful");
+            }
+        })
+    }else
+    {
+        msg_unit.failMessage(res,"充值积分不超过5000");
+    }
+
+}

@@ -33,6 +33,8 @@ var LogIn = function (req, res) {
                                 user.update_date = update;
 
                                 global.cach_server.set(id, JSON.stringify(user));
+                                global.cach_server.expire(id,24*60*60);
+
                                 msg_unit.successMessage(res, {token: id});
                             }
                         });
@@ -90,7 +92,7 @@ var Register = function (req, res) {
 var GetUser = function (req, res) {
     global.cach_server.get(req.params.token, function (err, obj) {
         console.log(obj);
-        if (err) {
+        if (err||result == null) {
             msg_unit.failMessage(res, err);
         }
         if (obj) {
@@ -116,7 +118,7 @@ var OpInteger = function (token, type, point, reason, transact, callback) {
     var op_type = type;
     var op_point = point;
     global.cach_server.get(token, function (err, obj) {
-        if (err) {
+        if (err||result == null) {
             callback(err);
         }
         if (obj) {

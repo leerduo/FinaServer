@@ -15,18 +15,22 @@ exports.addAddress = function (req, res) {
     var user_token = req.params.token;
     address.user = user_token;
     var user_address = new UserAddress(address);
-    global.cach_server.get(user_token, function (err) {
-        if (err) {
+    global.cach_server.get(user_token, function (err,result) {
+        console.log("存在不"+err);
+        if (err||result == null) {
             msg_unit.failMessage(res, "请先登录");
+        }else
+        {
+            user_address.save(function (err) {
+                if (err) {
+                    msg_unit.failMessage(res, err);
+                }
+                else {
+                    msg_unit.successMessage(res, "successful");
+                }
+            });
         }
-        user_address.save(function (err) {
-            if (err) {
-                msg_unit.failMessage(res, err);
-            }
-            else {
-                msg_unit.successMessage(res, "successful");
-            }
-        });
+
     });
 }
 
@@ -40,7 +44,7 @@ exports.upAddress = function (req, res) {
     var user_token = req.params.token;
     var user_address = req.body;
     global.cach_server.get(user_token, function (err, result) {
-            if (err) {
+            if (err||result == null) {
                 msg_unit.failMessage(res, "请先登录");
             }
             else {
@@ -65,7 +69,7 @@ exports.delAddress = function (req, res) {
     var address_id = req.params.id;
     var user_token = req.params.token;
     global.cach_server.get(user_token, function (err, result) {
-            if (err) {
+            if (err||result == null) {
                 msg_unit.failMessage(res, "请先登录");
             }
             else {
@@ -93,7 +97,7 @@ exports.getAddress = function (req, res) {
     if (page)
         page = 0;
     global.cach_server.get(user_token, function (err, result) {
-            if (err) {
+            if (err||result == null) {
                 msg_unit.failMessage(res, "请先登录");
             }
             else {

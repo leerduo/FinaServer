@@ -7,6 +7,7 @@ var GoodSchema = mongoose.Schema({
     seller: {type: mongoose.Schema.Types.ObjectId, ref: "UserModel"},
     name: String,
     description:String,
+    store_count:{type:Number,default:0},
     price:Number,
     picture:Array,
     html:Buffer,

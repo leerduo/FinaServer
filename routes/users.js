@@ -22,5 +22,10 @@ router.get(router_config.getUser,function(req,res){
 router.get(router_config.checkPoint,function(req,res){
     UserService.CheckUser(req,res);
 });
+
+router.get(router_config.addRelPoint,function(req,res){
+    UserService.addRelPoint(req,res);
+});
+
 module.exports = router;
 

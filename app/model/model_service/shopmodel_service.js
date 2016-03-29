@@ -16,7 +16,7 @@ exports.addShop = function (req, res) {
     shop.buyer = user_token;
     var shop = new UserShop(shop);
     global.cach_server.get(user_token, function (err, result) {
-        if (err) {
+        if (err||result == null) {
             msg_unit.failMessage(res, "请先登录");
         }
         shop.save(function (err, result) {
@@ -42,7 +42,7 @@ exports.upShop = function (req, res) {
     var user_token = req.params.token;
     var shop_count = parseInt(req.params.count);
     global.cach_server.get(user_token, function (err, result) {
-            if (err) {
+            if (err||result == null) {
                 msg_unit.failMessage(res, "请先登录");
             }
             else {
@@ -68,7 +68,7 @@ exports.delShop = function (req, res) {
     var shop_id = req.params.id;
     var user_token = req.params.token;
     global.cach_server.get(user_token, function (err, result) {
-            if (err) {
+            if (err||result == null) {
                 msg_unit.failMessage(res, "请先登录");
             }
             else {
@@ -94,7 +94,7 @@ exports.getShop = function (req, res) {
     var user_token = req.params.token;
     var page = req.params.page;
     global.cach_server.get(user_token, function (err, result) {
-            if (err) {
+            if (err||result == null) {
                 msg_unit.failMessage(res, "请先登录");
             }
             else {
