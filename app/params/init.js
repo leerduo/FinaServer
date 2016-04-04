@@ -6,16 +6,16 @@ var mysql = require("mysql");
 var mongoose = require('mongoose');
 var redis = require("redis");
 var qiniu = require("node-qiniu");
-global.mysql_db = mysql.createConnection(params.mysql_option);
-var connection = global.mysql_db;
-connection.connect(function (err) {
-    if (err) {
-        console.error('error connecting: ' + err.stack);
-        return;
-    }
-
-    console.log('connected as id ' + connection.threadId);
-});
+//global.mysql_db = mysql.createConnection(params.mysql_option);
+//var connection = global.mysql_db;
+//connection.connect(function (err) {
+//    if (err) {
+//        console.error('error connecting: ' + err.stack);
+//        return;
+//    }
+//
+//    console.log('connected as id ' + connection.threadId);
+//});
 
 
 mongoose.connect(params.mongodb_url, params.mongodb_option, function (res) {
