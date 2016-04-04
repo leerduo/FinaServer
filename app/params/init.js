@@ -6,6 +6,8 @@ var mysql = require("mysql");
 var mongoose = require('mongoose');
 var redis = require("redis");
 var qiniu = require("node-qiniu");
+
+
 //global.mysql_db = mysql.createConnection(params.mysql_option);
 //var connection = global.mysql_db;
 //connection.connect(function (err) {

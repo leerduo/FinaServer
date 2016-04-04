@@ -22,10 +22,12 @@ if(process.env.NODE_ENV === "dev")
 
     redis_pwd="fina_redis";
     redis_url = "redis://127.0.0.1:6379";
+    console.log("开发环境配置完成")
 }else
 {
-    mongodb_url = "mongodb://192.168.1.49/85902a297b9e4";
-    mongodb_option = {mongos: true,user:"24fd7858bafb4",pass:"433e16a1152b4",port:49032};
+    mongodb_url = "mongodb://139.196.178.25/fina2";
+    mongodb_option = {mongos: true,user:"fina",pass:"2016fina"};
+
     mysql_params = {
         port:3306,
         host: "192.168.1.11",
@@ -34,8 +36,9 @@ if(process.env.NODE_ENV === "dev")
         database: "d3d7cd45b175e4fe8abea5a1762755f8e"
     };
 
-    redis_pwd= "7357faf470694";
-    redis_url = "redis://192.168.1.51:49033";
+    redis_pwd= "fina_redis";
+    redis_url = "redis://139.196.178.25:49033";
+    console.log("Node发行环境配置完成")
 }
 
 
